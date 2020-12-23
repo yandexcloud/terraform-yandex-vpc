@@ -1,2 +1,2 @@
-# terraform-yandex-vpc
-Terraform module to deploy VPC with NAT in Yandex Cloud
+# vpc
+Terraform module to deploy VPC in Yandex Cloud
