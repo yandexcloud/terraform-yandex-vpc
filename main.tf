@@ -89,9 +89,10 @@ resource "yandex_compute_instance_group" "nat" {
   service_account_id = var.nat_sa
 
   instance_template {
-    name        = "${var.name}-nat-{instance.zone_id}-{instance.index_in_zone}"
-    hostname    = "${var.name}-nat-{instance.zone_id}-{instance.index_in_zone}"
-    platform_id = var.nat_platform_id
+    name               = "${var.name}-nat-{instance.zone_id}-{instance.index_in_zone}"
+    hostname           = "${var.name}-nat-{instance.zone_id}-{instance.index_in_zone}"
+    platform_id        = var.nat_platform_id
+    service_account_id = var.nat_sa
 
     resources {
       cores         = var.nat_cores
