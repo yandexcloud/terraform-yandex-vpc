@@ -9,3 +9,7 @@ output "public_subnets" {
 output "private_subnets" {
   value = yandex_vpc_subnet.net
 }
+
+output "nats" {
+  value = yandex_compute_instance_group.nat
+}
