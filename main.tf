@@ -61,6 +61,11 @@ resource "yandex_vpc_route_table" "nat" {
     vpc  = yandex_vpc_network.vpc.name
     zone = var.zones[count.index]
   }
+
+  lifecycle {
+    # NOTE: static routes are managed by NAT instances.
+    ignore_changes = [static_route]
+  }
 }
 
 resource "yandex_vpc_subnet" "net" {
