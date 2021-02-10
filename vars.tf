@@ -38,12 +38,6 @@ variable "nat_ssh_key" {
   description = "Public SSH key to place in NAT instance's authorized keys"
 }
 
-variable "nat_image_folder" {
-  type        = string
-  default     = ""
-  description = "Yandex Cloud folder ID where to find NAT image"
-}
-
 variable "nat_image" {
   type        = string
   description = "Name of VM image which is configured as NAT"
