@@ -33,6 +33,11 @@ variable "nat_sa" {
   description = "Service account ID for NAT instance"
 }
 
+variable "nat_serial_port" {
+  default     = 0
+  description = "1/0 - enable/disable serial console port for NAT instance"
+}
+
 variable "nat_ssh_key" {
   type        = string
   description = "Public SSH key to place in NAT instance's authorized keys"

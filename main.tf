@@ -85,7 +85,7 @@ resource "yandex_vpc_subnet" "net" {
 }
 
 data "yandex_compute_image" "nat" {
-  name      = var.nat_image
+  name = var.nat_image
 }
 
 resource "yandex_compute_instance_group" "nat" {
@@ -126,8 +126,9 @@ resource "yandex_compute_instance_group" "nat" {
     }
 
     metadata = {
-      user-data = yandex_vpc_route_table.nat[count.index].id
-      ssh-keys  = var.nat_ssh_key
+      user-data          = yandex_vpc_route_table.nat[count.index].id
+      ssh-keys           = var.nat_ssh_key
+      serial-port-enable = var.nat_serial_port
     }
 
     network_settings {
