@@ -84,8 +84,13 @@ resource "yandex_vpc_subnet" "net" {
   }
 }
 
+data "yandex_resourcemanager_folder" "nat" {
+  name = var.nat_image_folder
+}
+
 data "yandex_compute_image" "nat" {
-  name = var.nat_image
+  folder_id = data.yandex_resourcemanager_folder.nat.id
+  name      = var.nat_image
 }
 
 resource "yandex_compute_instance_group" "nat" {
